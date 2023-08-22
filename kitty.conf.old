@@ -1,0 +1,102 @@
+enable_audio_bell no
+
+#include  ~/.config/kitty/theme.conf
+
+include color.ini
+
+font_family      HackNerdFont
+font_size 12
+
+disable_ligatures never
+
+url_color #61afef
+
+url_style curly
+
+map f1   copy_to_buffer a
+map f2   paste_from_buffer a
+map f3   copy_to_buffer b
+map f4   paste_from_buffer b
+
+cursor_shape beam
+cursor_beam_thickness 1.8
+
+
+hide_window_decorations no
+window_border_width 1.0
+enable_audio_bell yes
+visual_bell_duration 0.0
+window_alert_on_bell yes
+bell_on_tab yes
+
+
+mause_hide_wait 3.0
+detect_urls yes
+
+repaint_delay 10
+input_delay 3
+sync_to_monitor yes
+
+
+tab_bar_style custom
+# --[ tabs ] --------------------------------------------------------------- {{{
+# fade, slant, separator, powerline (slanted, angled, round), custom
+#tab_bar_style                   custom
+tab_separator                   
+# REF: https://github.com/kovidgoyal/kitty/discussions/4447
+tab_fade                        0 0 0 0
+tab_title_template              "{fmt.fg._415c6d}{fmt.bg.default} 󰗎 {index}:{f'{title[:6]}…{title[-6:]}' if title.rindex(title[-1]) + 1 > 25 else title}{' []' if layout_name == 'stack' else ''} "
+active_tab_title_template       "{fmt.fg._83b6af}{fmt.bg.default}  {index}:{f'{title[:6]}…{title[-6:]}' if title.rindex(title[-1]) + 1 > 25 else title}{' []' if layout_name == 'stack' else ''} "
+tab_bar_edge                    top
+tab_bar_align                   left
+tab_bar_margin_width            0.0
+tab_bar_margin_height           10.0 0.0
+active_tab_font_style           bold-italic
+inactive_tab_font_style         normal
+tab_bar_min_tabs                2
+tab_activity_symbol             none
+bell_on_tab                     no
+# or "🔔 "
+#}}}
+
+
+inactive_tab_background #e06c75
+active_tab_background #98c379
+inactive_tab_foreground #000000
+tab_bar_margin_color black
+
+
+map ctrl+left neighboring_window left
+map ctrl+right neighboring_window right
+map ctrl+up neighboring_window up
+map ctrl+down neighboring_window down
+
+
+map ctrl+shift+z toggle_layout stack
+map ctrl+shift+enter new_window_with_cwd
+map ctrl+shift+t new_tab_with_cwd
+
+background_opacity 0.90
+
+
+#shell zsh   #here goes zsh 0 bash de depending on your shell I use zsh
+
+foreground           #f8f8f2
+background           #282a36
+title_fg             #f8f8f2
+title_bg             #282a36
+margin_bg            #6272a4
+margin_fg            #44475a
+removed_bg           #ff5555
+highlight_removed_bg #ff5555
+removed_margin_bg    #ff5555
+added_bg             #50fa7b
+highlight_added_bg   #50fa7b
+added_margin_bg      #50fa7b
+filler_bg            #44475a
+hunk_margin_bg       #44475a
+hunk_bg              #bd93f9
+search_bg            #8be9fd
+search_fg            #282a36
+select_bg            #f1fa8c
+select_fg            #282a36
